@@ -186,7 +186,7 @@ class TradingEnvSimple(TradingEnvironment):
 
 class TradingEnvNorm(TradingEnvironment):
     
-    """Trading environment with expanded observation, normalized outputs, and advanced reward function"""
+    """Trading environment with expanded observation space, normalized outputs, and advanced reward function"""
     
     def __init__(self, stock_data, balance_init=1e6, fee=1e-3, norms=None):
         
@@ -360,7 +360,7 @@ class TradingEnvNorm(TradingEnvironment):
     
 class TradingEnvMaxScale(TradingEnvironment):
         
-    """Trading environment with expanded observation, scaled outputs, and advanced reward function"""
+    """Trading environment with expanded observation space, max-scaled outputs, and advanced reward function"""
 
     def __init__(self, stock_data, balance_init=1e6, fee=1e-3):
         
