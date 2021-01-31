@@ -7,8 +7,8 @@ from IPython.display import clear_output
 import gym
 from gym import spaces
 
-from bgtrade.utils import validate_data
-from bgtrade.portfolio import Portfolio
+from bg_trade.utils import validate_data
+from bg_trade.portfolio import Portfolio
 
 
 

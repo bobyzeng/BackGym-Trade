@@ -18,7 +18,7 @@ setup(
     version='0.0.1',
     license='MIT',
     python_requires='>=3.7'
-    description='A stock trading environment for reinforcement learning',
+    description='A stock trading environment for backtesting and reinforcement learning',
     long_description=description,
     long_description_content_type='text/markdown',
     classifiers=['Programming Language :: Python :: 3']

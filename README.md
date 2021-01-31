@@ -1,3 +1,3 @@
-# Trading Gym
+# BackGym-Trade
 
-A stock trading environment for reinforcement learning. Inherits from OpenAI Gym.
+A stock trading environment for backtesting and reinforcement learning. Inherits from OpenAI Gym.
