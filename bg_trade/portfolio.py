@@ -112,6 +112,4 @@ class Portfolio:
         print('n-Steps:', self.days_passed)
             
         return sum(self.profits)
-    
-    
-    
+        
