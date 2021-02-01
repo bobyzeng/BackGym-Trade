@@ -6,7 +6,6 @@ import numpy as np
 import pandas as pd
 import yfinance as yf
 
-
  
     
 def build_table(conn, table_name, table_data):
@@ -185,7 +184,9 @@ def validate_data(dataframes):
         
     assert len(set(lens)) == 1, 'Lengths of price histories must match'    
     assert len(set(firsts)) == 1, 'Starting dates of price histories must match'
-    assert len(set(lasts)) == 1, 'Ending dates of price histories must match'    
+    assert len(set(lasts)) == 1, 'Ending dates of price histories must match'  
+    
+    return True
     
     
         
