@@ -1,9 +1,3 @@
-import gym
-import numpy as np
-import pandas as pd
-
-
-
 class Portfolio:
     
     def __init__(self, stocks, balance_init=1e6, fee=2e-2):
@@ -100,7 +94,7 @@ class Portfolio:
     def report(self):
         
         print('Balance:', round(self.balance, 5))
-        print('Net worth:', self.net_worth)
+        print('Net-worth:', self.net_worth)
         print('Shares held:', self.positions_full)
         print('Exposures:', self.positions_norm, '|', round(sum(self.positions_norm.values()), 5))
         
@@ -115,7 +109,7 @@ class Portfolio:
             print("Average profit: NA")
        
         print('Total profit:', sum(self.profits))
-        print('n Steps:', self.days_passed)
+        print('n-Steps:', self.days_passed)
             
         return sum(self.profits)
     
