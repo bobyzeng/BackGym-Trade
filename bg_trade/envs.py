@@ -15,6 +15,7 @@ from bg_trade.portfolio import Portfolio
 class TradingEnvironment(gym.Env):
     
     metadata = {'render.modes': ['human']}
+    desc = 'Base'
     
     def __init__(self, stock_data, balance_init=1e6, fee=2e-2):
         
@@ -178,15 +179,13 @@ class TradingEnvironment(gym.Env):
     
 class TradingEnvSimple(TradingEnvironment):
     
-    """Base trading environment with simple observation space and reward function"""
+    desc = """Base trading environment with simple observation space and reward function"""
+
     
-    pass
-
-
 
 class TradingEnvNorm(TradingEnvironment):
     
-    """Trading environment with expanded observation space, normalized outputs, and advanced reward function"""
+    desc = """Trading environment with expanded observation space, normalized outputs, and advanced reward function"""
     
     def __init__(self, stock_data, balance_init=1e6, fee=1e-3, norms=None):
         
@@ -360,7 +359,7 @@ class TradingEnvNorm(TradingEnvironment):
     
 class TradingEnvMaxScale(TradingEnvironment):
         
-    """Trading environment with expanded observation space, max-scaled outputs, and advanced reward function"""
+    desc = """Trading environment with expanded observation space, max-scaled outputs, and advanced reward function"""
 
     def __init__(self, stock_data, balance_init=1e6, fee=1e-3):
         
@@ -453,7 +452,10 @@ class TradingEnvMaxScale(TradingEnvironment):
         self.net_worth_long = [self.balance]
         self.shares_held = 0
         
-        self.scalers = self._configure_scalers_init(self.stocks)
+        self.scalers = self._configure_scalers_init(
+            self.stocks,
+            self.current_step-1,
+        )
 
         return self._next_observation()
         
